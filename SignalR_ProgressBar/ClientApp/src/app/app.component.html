@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-2 app-sidebar">
+    <!--Logo-->
+    <div class="app-sidebar-logo">
+      <img class="sidebar-logo" src="{{constants.SIGNALR_LOGO}}" />
+      <h6 class="sidebar-title">SignalR Practice Project</h6>
+    </div>
+
+
+    <!-- GOTO Button-->
+    <button class="goto-button">
+      Github <mat-icon>arrow_right_alt</mat-icon>
+    </button>
+
+    
+    <!--Navigation Buttons-->
+    <div class="navigation-button-list">
+      <mat-divider class="mb-3 mt-2"></mat-divider>
+
+      <a class="navigation-button" routerLink="" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>home</mat-icon> <span class="navlink">Dashboard</span> 
+      </a>
+
+      <a class="navigation-button" routerLink="/job-progress" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>star</mat-icon> <span class="navlink">Job Progress</span> 
+      </a>
+
+      <a class="navigation-button" routerLink="/live-charts" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>bar_chart</mat-icon> <span class="navlink">Live Charts Example</span> 
+      </a>
+    </div>
+
+  </div>
+
+
+  <div class="col-10 app-container">
+    <div class="app-container-topbar">
+      <div class="app-container-searchbar">
+        <form class="app-container-form">
+          <mat-form-field class="app-container-full-width" appearance="fill">
+            <mat-label>Search</mat-label>
+            <input type="text"
+                   placeholder="Search"
+                   aria-label="Search"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto"
+                   class="search-bar-input">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+      </div>
+
+
+      <div class="app-container-loginmenu">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+
+    <!-- The routed views render in the <router-outlet>-->
+    <router-outlet></router-outlet>
+  </div>
+</div>

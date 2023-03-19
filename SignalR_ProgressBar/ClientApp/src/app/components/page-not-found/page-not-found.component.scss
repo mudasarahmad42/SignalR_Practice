@@ -1,0 +1,33 @@
+.page-not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  flex-direction: column;
+}
+
+.page-not-found-container-image{
+    height: 500px
+}
+
+.free-pik-image
+{
+    margin-left: 5px;
+    opacity: 0.5;
+}
+
+.free-pik-image:hover {
+  opacity: 1;
+}
+
+
+.free-pik-image-link
+{
+    text-decoration: none;
+    color: lightgray;
+}
+
+.free-pik-image-link:hover {
+  color: cornflowerblue;
+  font-weight: 600;
+}

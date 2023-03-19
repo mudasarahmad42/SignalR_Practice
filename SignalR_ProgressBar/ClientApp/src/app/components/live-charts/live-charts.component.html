@@ -1,0 +1,13 @@
+<div style="display: block" *ngIf='signalRService.data; else showCharts'>
+  <canvas baseChart
+          [datasets]="signalRService.data"
+          [labels]="chartLabels"
+          [options]="chartOptions"
+          [legend]="chartLegend"
+          [type]="chartType"></canvas>
+</div>
+
+<ng-template #showCharts>
+  <h1 *ngIf="errorMessage != undefined" class="text-center text-danger">Something went wrong!</h1>
+  <h1 *ngIf="errorMessage == undefined" class="text-center text-primary">Loading...</h1>
+</ng-template>
